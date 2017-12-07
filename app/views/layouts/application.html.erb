@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <%= link_to('Cerrar sesión', destroy_user_session_path, method: :delete) if user_signed_in? %>
+    <%= link_to('Iniciar sesión', new_user_session_path) unless user_signed_in? %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
